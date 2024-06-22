@@ -17,7 +17,7 @@ const renderContent = {
         <h1 className='sm:text-xl sm:leading-snug text-center 
                        neo-brutalism-blue py-4 px-8 
                        text-white mx-5'>
-        Hi, I am <span className='font-bold'>Angela</span>👋
+        Hi, I am <span className='font-semibold'>Angela</span>👋
         <br />
         A graduating student from the <span className='font-semibold'>University of Science and Technology of Southern Philippines</span> Villanueva Campus
         </h1>
@@ -37,8 +37,7 @@ const renderContent = {
     ),
     4: (
         <InfoBox
-            text="
-Looking for a dev for your team? I'm interested! Let's discuss how I can contribute. "
+            text=" Looking for a dev for your team? I'm interested! Let's discuss how I can contribute. "
             link="/contact"
             btnText="Get in Touch"
         />
