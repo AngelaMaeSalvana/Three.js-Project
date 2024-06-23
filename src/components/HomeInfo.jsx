@@ -19,7 +19,7 @@ const renderContent = {
                        text-white mx-5'>
         Hi, I am <span className='font-semibold'>Angela</span>👋
         <br />
-        A graduating student from the <span className='font-semibold'>University of Science and Technology of Southern Philippines</span> Villanueva Campus
+        A graduating student from the <span className='font-semibold'>University of Science  and Technology <br/> of Southern Philippines</span> Villanueva Campus
         </h1>
     ), 
     2: (

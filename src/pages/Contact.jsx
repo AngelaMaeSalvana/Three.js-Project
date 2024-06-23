@@ -7,34 +7,33 @@ const Contact = () => {
   const formRef = useRef(null)
 
   const handleChange = (e) => {
-    setForm({...form,[e.target.name]: e.target.value})
+    setForm({...form,[e.target.name]: e.target.value })
 
   }
-  const handleFocus = () => {
-    
-  }
-  const handleBlur = () => {
+  const handleFocus = () => { }
+  const handleBlur = () => { }
 
-  }
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
 
-    emailjs.sendForm(
+    emailjs.send(
       import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
       import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
       {
-        from_name : form.name,
-        to_name : "Angela",
-        from_email : form.email,
-        to_email : 'salvanaangelamae@gmail.com',
-        message : form.message 
+        from_name: form.name,
+        to_name: "Angela Mae",
+        from_email: form.email,
+        to_email: 'salvanaangelamae@gmail.com',
+        message: form.message 
       },
       import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY 
     ).then(() => {
       setIsLoading(false);
       //to do :show success message
       //to do :hide alert
+
+      setForm({name: '',email:'',message:''});
     }).catch((error) => {
       setIsLoading(false);
       console.log(error);
@@ -46,8 +45,7 @@ const Contact = () => {
     <section className='relative flex lg:flex-row flex-col max-container'>
         <div className='flex-1 min-w-[50%] flex flex-col'>
           <h1 className='head-text'>Get in Touch</h1>
-          <form action="" 
-                className='w-full flex flex-col gap-7 mt-14'
+          <form className='w-full flex flex-col gap-7 mt-14'
                 onSubmit={handleSubmit}
                 >
             <label className='text-black-500 font-semibold'>
@@ -93,12 +91,11 @@ const Contact = () => {
             <button
               type='submit'
               className='btn'
+              disabled={isLoading}
               onFocus={handleFocus}
               onBlur={handleBlur}
-              disabled={isLoading}
             >
-              {isLoading ? 'Sending...' : 'Send Message'}
-
+              {isLoading ? 'Sending...' : 'Send Message'} 
             </button>
           </form>
 
